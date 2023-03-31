@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+
+</head>
+
+<body>
+
+<form action="library_online/" method="POST" >
+    {% csrf_token %}
+
+    <label for="sr">Cerca per "NOME AUTORE": </label>
+    <input id="sr" type="text" name="sr">
+    <button type="submit" class="btn btn-primary">CERCA</button>
+
+    <label for="tg">Cerca per "TAG": </label>
+    <input id="tg" type="text" name="tg">
+    <button type="submit" class="btn btn-primary">CERCA</button>
+
+
+        <a class="btn btn-primary" href="/">Visualizza</a>
+
+</form>
+
+</body>

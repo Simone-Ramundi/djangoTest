@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+
+</head>
+<body>
+<table class="table table-bordered" border='1'>
+ <tr>
+     <th class="table-active">ID</th>
+     <th class="table-active">Titolo</th>
+     <th class="table-active">Contenuto</th>
+     <th class="table-active">Autore</th>
+     <th class="table-active">Tag</th>
+     <th class="table-active">Data pubblicazione</th>
+ </tr>
+ {% for x in mymembers %}
+   <tr>
+     <td>{{ x.id }}</td>
+       <td>{{ x.titolo }}</td>
+     <td>{{ x.contenuto }}</td>
+     <td>{{ x.autore }}</td>
+       <td>{{ x.tag }}</td>
+       <th>{{ x.data }}</th>
+       <td><a class="btn btn-danger" href="delete/{{x.id}}">Cancella</a></td>
+   </tr>
+ {% endfor %}
+
+</table>
+
+
+        <a class="btn btn-primary" href="/form">Aggiungi membro</a>
+
+
+
+        <a class="btn btn-primary" href="/library_searching">Ricerca</a>
+
+
+</body>
+</html>

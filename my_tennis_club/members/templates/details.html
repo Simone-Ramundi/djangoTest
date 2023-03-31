@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+{% extends "master.html" %}
+
+{% block title %}
+ Ecco i dettagli su {{ mymember.titolo }} {{ mymember.autore }}
+{% endblock %}
+
+
+{% block content %}
+
+<h1>{{ mymember.titolo }} {{ mymember.autore }}</h1>
+
+<p>Contenuto: {{ mymember.contenuto }}</p>
+<p>Tag: {{ mymember.tag }}</p>
+<p>Data di pubblicazione: {{ mymember.data }}</p>
+<a href="{{ mymember.image.url }}"></a>
+<img src="{{ mymember.image.url}}" alt="Lights" style="width:100%">
+<p>Back to <a href="/members">Books</a></p>
+{% endblock %}
+
+</body>
+</html>
